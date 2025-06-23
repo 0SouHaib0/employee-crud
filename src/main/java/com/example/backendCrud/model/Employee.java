@@ -6,9 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Employee {
     @Id
@@ -26,19 +30,8 @@ public class Employee {
     @Email
     private String mail;
 
-    public Employee(Long id, String lastName, String firstName, String phone, String mail, String cnssNumber) {
-        this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.phone = phone;
-        this.mail = mail;
-        this.cnssNumber = cnssNumber;
-    }
-
     private  String cnssNumber;
 
-    public Employee() {
-    }
 
 
 
