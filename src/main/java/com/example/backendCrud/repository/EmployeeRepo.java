@@ -4,6 +4,9 @@ import com.example.backendCrud.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
-public interface EmployeeRepo extends JpaRepository<Employee,Long> {
+import java.util.List;
 
+public interface EmployeeRepo extends JpaRepository<Employee,Long> {
+    List<Employee> findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCaseOrPhoneContainingIgnoreCase(
+            String firstName, String lastName, String phone);
 }
